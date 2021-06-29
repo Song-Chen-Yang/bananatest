@@ -1,0 +1,112 @@
+html,
+body,
+div,
+h1,
+p,
+label,
+input,
+* {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+body {
+  font-family: '微软雅黑';
+}
+@font-face {
+  font-family: HARLOWSI;
+  src: url(../fonts/HARLOWSI.TTF);
+}
+.login {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -210px;
+  width: 420px;
+  border-radius: 8px;
+  padding-left: 80px;
+}
+.logo {
+  width: 200px;
+  height: 28px;
+}
+.logo h1 {
+  font-family: HARLOWSI;
+  margin: 20px 20px 40px;
+  font-size: 24px;
+}
+.logo h2 {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.logo form {
+  padding-left: 20px;
+  width: 400px;
+  height: 30px;
+  font-size: 13px;
+  position: relative;
+}
+form p {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.logo form input {
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+  display: block;
+  text-indent: 6px;
+  background-color: #f3f3f4;
+  transition: box-shadow 0.5s ease-out 0s;
+}
+.logo form input:hover {
+  box-shadow: 0 0 3px 2px #e089a8;
+  border: 2px solid #fd79a8;
+}
+form p:last-child {
+  margin-top: 10px;
+}
+.forget {
+  width: 300px;
+  margin-bottom: 0px;
+}
+form .forget::after {
+  content: '忘记?';
+  float: right;
+  color: #3d7eff;
+  cursor: pointer;
+}
+form .submit {
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  display: block;
+  width: 300px;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #ea4c89;
+  cursor: pointer;
+}
+.nocount {
+  margin-top: 10px;
+  width: 110px;
+  float: left;
+}
+.nocount a {
+  color: #00f7de;
+}
+.warning {
+  margin-top: 20px;
+  font-size: 12px;
+}

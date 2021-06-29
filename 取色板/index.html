@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="center">
+        <div class="flex">
+          <div class="color-list">
+            <ul
+              class="color-ul"
+              id="color-ul"
+              v-for="(item,index) in colorList"
+            >
+              <li
+                :class="{cur: curState === index}"
+                @mousemove="ChangeColor(index)"
+                @mouseleave="endChange()"
+                :key="index"
+                id="ChangeColor"
+              >
+                <label id="labelId">{{index+1 | showId}}</label>
+                <p>{{item.colorName}}</p>
+                <div class="img-1">
+                  <img :src="getImgUrl (index+1 )" alt="" />
+                </div>
+              </li>
+            </ul>
+            <div class="insert">
+              <img @click="insert()" src="img/icon/add.png" alt="" />
+            </div>
+          </div>
+          <div class="rgb-list">
+            <ul class="rgb-ul" v-for="(item,index) in colorList" :key="item">
+              <li
+                :class="{cur: curState === index}"
+                @mousemove="ChangeColor(index)"
+                @mouseleave="endChange()"
+              >
+                <img :src="getRgbImgUrl (index+1)" alt="" />
+                <i for="">{{item.color}}</i>
+              </li>
+              <li>
+                <div class="opre">
+                  <img
+                    @click="remove(index)"
+                    src="img/icon/delete.png"
+                    alt=""
+                  />
+                  <img src="img/icon/edit.png" alt="" />
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cmyk-list">
+            <ul class="cmyk-ul">
+              <li>
+                <label>C</label>
+                <p v-model="C" style="color: cyan">{{C}}</p>
+              </li>
+              <li>
+                <label>M</label>
+                <p v-model="M" style="color: Magenta">{{M}}</p>
+              </li>
+              <li>
+                <label>Y</label>
+                <p v-model="Y" style="color: yellow">{{Y}}</p>
+              </li>
+              <li>
+                <label>K</label>
+                <p v-model="K" style="color: black">{{K}}</p>
+              </li>
+              <li>
+                <label>R</label>
+                <p v-model="R" style="color: red">{{R}}</p>
+              </li>
+              <li>
+                <label>G</label>
+                <p v-model="G" style="color: green">{{G}}</p>
+              </li>
+              <li>
+                <label>B</label>
+                <p v-model="B" style="color: blue">{{B}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="text">
+            <h1 id="text">红梅</h1>
+          </div>
+          <div class="myColor">
+            <div class="circle">
+              <img src="img/cuticon/logo.png" alt="" />
+            </div>
+            <div class="MYCOLOR">
+              <img src="img/cuticon/MYCOLORS.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="addColor" id="addColor">
+          <form action="">
+            <div class="cont">
+              <h3>请输入颜色信息</h3>
+              <p class="close">
+                <img @click="close()" src="img/icon/close.png" alt="" />
+              </p>
+              <input type="text" placeholder="请输入颜色名称" />
+              <input type="text" placeholder="请输入色号" />
+              <div class="select">
+                <div class="open">
+                  <div>
+                    <label for="">RGB文件</label> <label for="">CMYK文件</label>
+                  </div>
+                  <input
+                    type="file"
+                    value="未选择RGB图片"
+                    @click="onRgbFile()"
+                    class="left"
+                  />
+                  <input
+                    type="file"
+                    value="未选择CMYK图片"
+                    @click="onCmykFile()"
+                  />
+                </div>
+              </div>
+              <button @click="submit()">确认</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="Mask" id="Mask"></div>
+    <script src="vue.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

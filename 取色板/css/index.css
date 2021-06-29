@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #91b493;
+  transition: background-color 1s ease-out 0.5s;
+}
+@font-face {
+  font-family: HYWeiBeiF;
+  src: url(../fonts/HYWeiBeiF.ttf);
+}
+@font-face {
+  font-family: FangZheng;
+  src: url(../fonts/方正北魏楷书繁体.ttf);
+}
+@font-face {
+  font-family: SourceHanSansCN-Light;
+  src: url(../fonts/SourceHanSansCN-Light.ttf);
+}
+.center {
+  width: 800px;
+  margin: 100px auto;
+  position: relative;
+}
+.flex {
+  height: 100%;
+  display: flex;
+}
+.flex .color-list {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  float: left;
+}
+.flex .color-list .color-ul {
+  float: left;
+  width: 180px;
+}
+.flex .color-list .color-ul li::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 44px;
+  left: -10px;
+  top: 5px;
+  background-color: #fff;
+}
+.color-list .color-ul li {
+  position: relative;
+  width: 160px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.cur {
+  transition: opacity 0.5s ease-in-out 0s;
+  opacity: 0.5;
+}
+.color-list .color-ul li > label {
+  font-family: '黑体';
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 4px;
+  color: #fff;
+}
+.color-list .color-ul li > p {
+  float: right;
+  margin-right: 5px;
+  letter-spacing: 1px;
+  font-family: FangZheng;
+  font-size: 14px;
+  color: #fff;
+}
+.color-list .color-ul li > div {
+  display: inline;
+}
+.color-list .color-ul li > .img-1 > img {
+  width: 160px;
+  height: 30px;
+}
+
+/* 添加 */
+.flex .insert {
+  width: 50px;
+  height: 50px;
+  margin-left: 120px;
+  margin-top: 40px;
+}
+.flex .insert img {
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-right: -20px;
+  cursor: pointer;
+  transition: opacity 0.2s linear 0s;
+}
+.flex .insert img:hover {
+  opacity: 0.7;
+}
+/* rgb */
+.rgb-list {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  /* float: left; */
+  margin-top: 22px;
+  margin-left: 15px;
+}
+.rgb-list ul {
+  width: 180px;
+}
+.rgb-list ul li {
+  width: 180px;
+  margin-bottom: 31px;
+  cursor: pointer;
+  position: relative;
+}
+.rgb-list .rgb-ul li img {
+  width: 180px;
+  height: 12px;
+  margin-bottom: 0;
+}
+.rgb-list .rgb-ul li i {
+  display: inline-block;
+  font-size: 0.15rem;
+  color: #fff;
+  font-style: normal;
+  z-index: 1;
+}
+
+/* 编辑 */
+.rgb-list .rgb-ul li .opre {
+  width: 60px;
+  height: 50px;
+  position: absolute;
+  right: -65px;
+  top: -70px;
+}
+.rgb-list .rgb-ul li .opre img {
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  transition: opacity 0.2s linear 0s;
+  cursor: pointer;
+  z-index: 10;
+}
+.rgb-list .rgb-ul li .opre img:hover {
+  opacity: 0.7;
+}
+
+/* cmyk部分 */
+.flex .cmyk-list .cmyk-ul {
+  width: 50px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+.flex .cmyk-list .cmyk-ul li {
+  height: 48px;
+  border-top: 1px solid white;
+}
+.flex .cmyk-list .cmyk-ul li:last-child {
+  border-bottom: 1px solid white;
+}
+.flex .cmyk-list .cmyk-ul li label {
+  font-family: FangZheng;
+  color: #fff;
+  font-size: x-small;
+}
+.flex .cmyk-list .cmyk-ul li p {
+  float: right;
+  margin-right: 5px;
+  margin-top: 25px;
+  padding-bottom: 3px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* 红梅 */
+.flex .text {
+  margin-left: 90px;
+  margin-top: 8px;
+  text-decoration: rtl;
+}
+.flex .text h1 {
+  font-family: HYWeiBeiF;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 300;
+  transition: display 1s ease-in-out 0.4s;
+}
+
+/* MYCOLOR */
+.myColor {
+  width: 70px;
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.myColor .circle img {
+  width: 65px;
+}
+.myColor .MYCOLOR img {
+  margin-top: 15px;
+  padding-left: 16px;
+  width: 26px;
+}
+
+/* 遮罩层 */
+.Mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+  z-index: 77;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}
+/* 添加颜色 */
+.center .addColor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -190px;
+  margin-left: -300px;
+  width: 600px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 9999;
+  display: none;
+}
+.center .addColor .cont {
+  position: static;
+  top: 30px;
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.center .addColor .cont .close {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+.center .addColor .cont .close img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.center .addColor .cont h3 {
+  font-family: '微软雅黑';
+  font-weight: bold;
+}
+.center .addColor .cont input {
+  width: 500px;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 20px;
+  display: block;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid #dcdcdc;
+}
+.center .addColor .select {
+  margin-top: 20px;
+  position: relative;
+}
+.center .addColor .select input {
+  border: 0;
+  width: 200px;
+  display: inline-block;
+  margin-right: 40px;
+  opacity: 0.5;
+  z-index: 999;
+  cursor: pointer;
+  margin-top: 0;
+}
+.center .addColor .open {
+  position: absolute;
+  top: 10px;
+  width: 500px;
+  border-bottom: 2px solid #dcdcdc;
+}
+.center .addColor .open label {
+  padding-left: 50px;
+  padding-right: 120px;
+  color: #dcdcdc;
+  z-index: 1;
+}
+
+.center .addColor .cont button {
+  width: 60px;
+  font-size: 22px;
+  margin-top: 100px;
+  border-radius: 5px;
+  margin-left: 45%;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
